@@ -1,5 +1,6 @@
-.App {
+App {
   text-align: center;
+  background: tomato;
 }
 
 .title-font {
@@ -7,9 +8,29 @@
   color: ivory;
 }
 
+.img-fixed {
+  position: fixed;
+}
+
+.bg-red {
+  background: rgb(128, 0, 0, 0.7);
+  border-bottom: 2px solid black;
+  border-radius: 1px;
+  width: 100%;
+}
+
 .caption {
   position: absolute;
   top: 50%;
+  width: 100%;
+  color: antiquewhite;
+  overflow-x: hidden;
+  font-family: "Lato", sans-serif;
+}
+
+.caption-text {
+  position: absolute;
+  top: 120px;
   width: 100%;
   color: antiquewhite;
   overflow-x: hidden;
