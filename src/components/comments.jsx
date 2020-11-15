@@ -11,6 +11,11 @@ class Comment extends Component {
                             {this.props.comment}
                         </p>
                     </div>
+                    {
+                        this.props.created ==="1" ?
+                        <button onClick={() => this.props.deleteComment(this.props.id, this.props.postId)} className="btn btn-sm btn-warning float-right my-2">Delete</button>
+                        :null
+                    }
                 </div>
             </div>
             

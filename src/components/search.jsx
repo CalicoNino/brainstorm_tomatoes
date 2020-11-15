@@ -8,18 +8,18 @@ class Search extends Component {
             <React.Fragment>
                 <h5 className="text-left my-2">Quick Search</h5>
                 <p className="text-left">
-                    Enter a keyword or a hashtag to search:
+                    Enter a keyword or a hashtag to search available ratings:
                 </p>
                 <div className="text-left form-group">
-                    <textarea className="form-control" rows="2" id="comment"></textarea>
+                    <textarea className="form-control" rows="2" id="search"></textarea>
                 </div>
-                <button className="btn btn-warning btn-sm float-right">Search</button>
+                <button onClick={() => this.props.toSearch(document.getElementById("search").value)} className="btn btn-warning btn-sm float-right">Search</button>
                 <br/>
                 <br/>
 
                 <p className="text-left">Your Results:</p>
                 <div className="card bg-light text-dark" id="results">
-                    No Results to show.
+                    {this.props.searchResults}
                 </div>
                 <br/>
                 <p className="text-left">Top Used Hashtags Today:</p>

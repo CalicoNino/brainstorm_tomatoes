@@ -28,13 +28,18 @@ class Post extends Component {
                         </div>
                     </div>
                     <div className="row mx-4 my-3">
+                        <button className="btn btn-sm btn-warning mx-2 float-left">Click to view available attached files</button>
                         <div className="m-auto float-left">{this.props.groups}</div>
                         <button className="btn btn-sm btn-warning mx-2 float-right" onClick={() => this.props.addComment(this.props.id)}>Add Comment</button>
                     </div>
                 </div>
                 { this.props.comments.map( comment =>
                     <Comment
-                        comment={comment}
+                        key={comment.id}
+                        postId={this.props.id}
+                        created={comment.created}    
+                        comment={comment.text}
+                        deleteComment={this.props.deleteComment}
                     />
                 )}
             </div>
