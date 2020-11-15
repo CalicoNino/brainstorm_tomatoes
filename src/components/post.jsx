@@ -41,6 +41,7 @@ class Post extends Component {
                 { this.props.comments.map( comment =>
                     <Comment
                         key={comment.id}
+                        id={comment.id}
                         postId={this.props.id}
                         created={comment.created}    
                         comment={comment.text}

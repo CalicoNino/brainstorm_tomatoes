@@ -21,7 +21,7 @@ class Feed extends Component {
                 <div className="caption-text text-center">
                     <div className="row mx-auto">
                         <div className="mx-3 col-8 rounded bg-tot">
-                        { this.props.posts.map( post =>
+                        { this.props.posts.slice(0).reverse().map( post =>
                             <Post
                             key={post.id}
                             id={post.id}

@@ -75,22 +75,23 @@ class App extends Component {
 
   addComment = (id) => {
       var comment = prompt("What is your comment?")
-      const posts = [...this.state.posts];
-      posts[id].comments.push({
-        id: posts[id].comments.length,
-        created:"1",
-        text: comment
-      });
-      console.log(posts)
       if(comment !== ''){
-          this.setState({posts})
-          console.log("Comment Created")
+        const posts = [...this.state.posts];
+        posts[id].comments.push({
+          id: posts[id].comments.length,
+          created:"1",
+          text: comment
+        });
+        console.log(posts)
+        this.setState({posts})
+        console.log("Comment Created")
       }  
   }
 
   deleteComment = (commentId, postId) => {
     const posts = [...this.state.posts]
     const comments = this.state.posts[postId].comments.filter(i => i.id !== commentId)
+    console.log(commentId)
     for (let i = commentId; i <= comments.length-1; i++) {
       comments[i].id = comments[i].id - 1;
     }
