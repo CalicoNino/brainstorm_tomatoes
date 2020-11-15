@@ -12,11 +12,19 @@ App {
   position: fixed;
 }
 
+.min-h {
+  min-height: 100px;
+}
+
 .bg-red {
   background: rgb(128, 0, 0, 0.7);
   border-bottom: 2px solid black;
   border-radius: 1px;
   width: 100%;
+}
+
+.bg-tot {
+  background: rgb(128, 0, 0);
 }
 
 .caption {
@@ -94,7 +102,7 @@ video {
   height: auto;
   z-index: -100;
   transform: translateX(-50%) translateY(-50%);
-  background: url("") no-repeat;
+  /* background: url("") no-repeat; */
   background-size: cover;
   transition: 1s opacity;
 }
