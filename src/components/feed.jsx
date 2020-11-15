@@ -25,13 +25,16 @@ class Feed extends Component {
                             <Post
                             key={post.id}
                             id={post.id}
+                            created={post.created}
                             title={post.title}
                             score={post.score}
                             context={post.context}
                             groups={post.groups}
                             items={post.items}
                             comments={post.comments}
+                            deletePost={this.props.deletePost}
                             addComment={this.props.addComment}
+                            deleteComment={this.props.deleteComment}
                             addScore={this.props.addScore}
                             />
                         )}

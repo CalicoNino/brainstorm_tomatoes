@@ -31,6 +31,11 @@ class Post extends Component {
                         <button className="btn btn-sm btn-warning mx-2 float-left">Click to view available attached files</button>
                         <div className="m-auto float-left">{this.props.groups}</div>
                         <button className="btn btn-sm btn-warning mx-2 float-right" onClick={() => this.props.addComment(this.props.id)}>Add Comment</button>
+                        {
+                            this.props.created ==="1" ?
+                            <button onClick={() => this.props.deletePost(this.props.id)} className="btn btn-sm btn-warning mx-2 float-right">Delete Post</button>
+                            :null
+                        }
                     </div>
                 </div>
                 { this.props.comments.map( comment =>
