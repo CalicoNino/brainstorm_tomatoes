@@ -18,7 +18,7 @@ class Feed extends Component {
         return ( 
             <React.Fragment>
                 <NavBar />
-                <div className="caption-text text-center">
+                <div className="caption-text text-center my-2">
                     <div className="row mx-auto">
                         <div className="mx-3 col-8 rounded bg-tot">
                         { this.props.posts.slice(0).reverse().map( post =>
