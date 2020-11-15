@@ -5,7 +5,7 @@ class Comment extends Component {
         return ( 
             <div className="row mx-2">
                 <div className="col-sm-4"></div>
-                <div className="col border border-top-0">
+                <div className="col border border-top-0 border-warning">
                     <div className="m-2 card text-left text-dark">
                         <p className="m-2">
                             {this.props.comment}
@@ -13,7 +13,7 @@ class Comment extends Component {
                     </div>
                     {
                         this.props.created ==="1" ?
-                        <button onClick={() => this.props.deleteComment(this.props.id, this.props.postId)} className="btn btn-sm btn-warning float-right my-2">Delete</button>
+                        <button onClick={() => this.props.deleteComment(this.props.id, this.props.postId)} className="btn btn-sm btn-danger float-right my-2">Delete</button>
                         :null
                     }
                 </div>

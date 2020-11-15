@@ -23,7 +23,7 @@ class Search extends Component {
                 </div>
                 <br/>
                 <p className="text-left">Top Used Hashtags Today:</p>
-                <div className='card bg-light'>
+                <div className='card bg-secondary'>
                     <h6>
                         <span className='badge badge-pill badge-dark text-light m-1'>#Geography 🗺️</span>
                         <span className='badge badge-pill badge-dark text-light m-1'>#Biology 🧬</span>

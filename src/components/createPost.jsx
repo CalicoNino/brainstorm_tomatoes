@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NavBar from './navbar';
 import Search from './search';
 import {Link} from 'react-router-dom';
+import books from '../visuals/books.jpeg'
 
 class CreatePost extends Component {
     state = { 
@@ -58,10 +59,7 @@ class CreatePost extends Component {
                                     <button className="btn btn-sm btn-warning float-left">Attach a photo or document</button>
                                     <br/>
                                     <br/>
-                                    <p>
-                                        If you would like to edit your post later, use this generated link:<br/>
-                                         <a href="#" className="center">/editmypost</a>
-                                    </p>
+                                    <img src={books} width={1140*0.6} height={361*0.6} className="text-center my-3 rounded" alt="logo"/>
                                 </div>
                             </div>
                             
