@@ -17,7 +17,7 @@ App {
 }
 
 .bg-red {
-  background: rgb(128, 0, 0, 0.7);
+  background: rgb(128, 0, 0);
   border-bottom: 2px solid black;
   border-radius: 1px;
   width: 100%;

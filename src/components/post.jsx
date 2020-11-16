@@ -7,7 +7,7 @@ class Post extends Component {
     render() { 
         return (
             <div className="my-4">
-                <div className="container border-top rounded border-warning">
+                <div className="container border-top rounded border-light">
                     <div className="row">
                         <div className="col-9 m-auto">
                             <div className="row">
@@ -28,7 +28,7 @@ class Post extends Component {
                             </div>
                         </div>
 
-                        <div className="col-sm-2 bg-tot border-0 mx-3 my-3">
+                        <div className="col-sm-2 bg-dark border-0 mx-3 my-3">
                             <div className="row m-auto card bg-success font-weight-bold text-light rounded">
                             &nbsp;
                                 <h2 className="text-center">&nbsp;&nbsp;&nbsp;{this.props.score[0]}&nbsp;&nbsp;&nbsp;</h2>/10

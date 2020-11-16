@@ -87,17 +87,6 @@ class App extends Component {
     })
     this.setState({posts});
     alert("Post has been Edited! Returning to the Feed section to view");
-    console.log(this.state.posts)
-  }
-
-  deleteEditedPost = (id) => {
-    const posts = this.state.posts.filter(post => post.id !== id);
-    for (let i = id; i <= posts.length-1; i++) {
-      posts[i].id = posts[i].id - 1;
-    }
-    this.setState({posts});
-    console.log("Post Deleted")
-    console.log(this.state.posts)
   }
 
   editPost = (id) =>{
@@ -115,7 +104,6 @@ class App extends Component {
       }
       this.setState({posts});
       console.log("Post Deleted")
-      console.log(this.state.posts)
     }
   }
 
@@ -180,8 +168,9 @@ class App extends Component {
         <Switch>
           <Route path='/' exact component={Home}/>
           <Route path='/feed' exact render={(props) => 
-            <Feed 
+            <Feed
                 posts={this.state.posts}
+                edit={this.state.edit}
                 searchResults={this.state.searchResults}
                 toSearch={this.toSearch}
                 deletePost={this.deletePost}
@@ -200,7 +189,6 @@ class App extends Component {
             <EditPost
                 edit={this.state.edit}
                 addEditedPost={this.addEditedPost}
-                deleteEditedPost={this.deleteEditedPost}
                 searchResults={this.state.searchResults}
                 toSearch={this.toSearch}
             />}/>

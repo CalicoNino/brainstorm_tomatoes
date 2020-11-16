@@ -26,9 +26,9 @@ class CreatePost extends Component {
         return ( 
             <React.Fragment>
                 <NavBar />
-                <div className="caption-text text-center">
+                <div className="caption-text text-center my-2">
                     <div className="row mx-auto">
-                        <div className="mx-3 col-8 rounded bg-dark text-left">
+                        <div className="mx-5 col-8 rounded bg-dark text-left">
                             <div className="row">
                                <Link to='/feed' className="btn btn-warning m-3 float-left">Return to Feed</Link>  
                             </div>
@@ -64,7 +64,7 @@ class CreatePost extends Component {
                             </div>
                             
                         </div>
-                        <div className="col-sm-3 mx-auto bg-tot rounded h-100">
+                        <div className="col-sm-3 bg-dark rounded h-100">
                             <Search
                             key="0"
                             searchResults={this.props.searchResults}

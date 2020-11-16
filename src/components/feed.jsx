@@ -14,13 +14,16 @@ class Feed extends Component {
         }  
     }
 
-    render() { 
-        return ( 
+    render() {
+        console.log(this.props.posts)
+        console.log(this.props.edit)
+        return (
             <React.Fragment>
                 <NavBar />
                 <div className="caption-text text-center my-2">
                     <div className="row mx-auto">
-                        <div className="mx-3 col-8 rounded bg-tot">
+                        <div className="mx-5 col-8 rounded bg-dark">
+                        <h1 className="text-left my-3 mx-4">Feed</h1>
                         { this.props.posts.slice(0).reverse().map( post =>
                             <Post
                             key={post.id}
@@ -40,7 +43,7 @@ class Feed extends Component {
                             />
                         )}
                         </div>
-                        <div className="col-sm-3 mx-auto bg-tot rounded h-100">
+                        <div className="col-sm-3 bg-dark rounded h-100">
                             <Search
                             key="0"
                             searchResults={this.props.searchResults}
