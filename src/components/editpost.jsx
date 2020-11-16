@@ -4,13 +4,13 @@ import Search from './search';
 import {Link} from 'react-router-dom';
 import books from '../visuals/books.jpeg'
 
-class CreatePost extends Component {
+class EditPost extends Component {
     state = { 
-        title: "",
-        text: "",
-        groups: "",
-        project: true,
-        assignment: true
+        title: String(this.props.edit.title).replace(' [Edited]',''),
+        text: this.props.edit.context,
+        groups: String(this.props.edit.groups).replace('#Project ,', '').replace('#Assignment ,', '').replace('#Project ', '').replace('#Assignment ', '').replace('#Project', '').replace('#Assignment', ''),
+        project: String(this.props.edit.groups).includes('#Project') ? true: false,
+        assignment: String(this.props.edit.groups).includes('#Assignment') ? true: false
     }
 
     handleCheckbox = (e) => {
@@ -20,9 +20,9 @@ class CreatePost extends Component {
     handle = (e) => {
         this.setState({[e.target.id]: e.target.value})
         console.log(e.target.id + " changed.")
-      }
+    }
 
-    render() { 
+    render() {
         return ( 
             <React.Fragment>
                 <NavBar />
@@ -34,11 +34,13 @@ class CreatePost extends Component {
                             </div>
                             <div className="row mx-3">
                                 <div className="col-md-10">
-                                    <h3>Create A Post</h3>
+                                    <h3>Edit Post</h3>
                                 </div>
                                 <Link to="/feed" className="btn btn-lg btn-warning float-right" 
-                                    onClick={() => this.props.addPost(this.state.title, this.state.text, this.state.groups,
-                                                                            this.state.project, this.state.assignment)}>
+                                    onClick={() => this.props.addEditedPost(this.state.title, this.state.text, this.state.groups,
+                                                                            this.state.project, this.state.assignment, 
+                                                                            this.props.edit.score, this.props.edit.created, this.props.edit.comments, 
+                                                                            this.props.edit.id)}>
                                     Post
                                 </Link>
                             </div>
@@ -77,4 +79,4 @@ class CreatePost extends Component {
     }
 }
  
-export default CreatePost;
+export default EditPost;

@@ -32,6 +32,7 @@ class Feed extends Component {
                             groups={post.groups}
                             items={post.items}
                             comments={post.comments}
+                            editPost={this.props.editPost}
                             deletePost={this.props.deletePost}
                             addComment={this.props.addComment}
                             deleteComment={this.props.deleteComment}

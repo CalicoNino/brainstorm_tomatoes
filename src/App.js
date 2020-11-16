@@ -3,6 +3,7 @@ import './App.css';
 import Home from "./components/home";
 import Feed from "./components/feed";
 import CreatePost from "./components/createPost";
+import EditPost from "./components/editpost";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 class App extends Component {
@@ -38,7 +39,8 @@ class App extends Component {
               created: "0",
               text:"Not really an issue, I think students alreayd have much better resources."}
           ]}
-      ] 
+      ],
+      edit: {}
   }
 
   addPost = (title,text,groups,project,assignment) => {
@@ -61,16 +63,58 @@ class App extends Component {
       comments: []
     })
     this.setState({posts});
-    window.confirm("Post has been created! Return to the Feed section to view");
+    alert("Post has been created! Returning to the Feed section to view");
   }
 
-  deletePost = (id) => {
+  addEditedPost = (title,text,groups,project,assignment,score,created,comments,oldid) => {
+    // this.deleteEditedPost(oldid)
+    var finalGroups = []
+    if (project) {
+      finalGroups.push("#Project ")
+    }
+    if (assignment) {
+      finalGroups.push("#Assignment ")
+    }
+    finalGroups.push(groups)
+    const posts = [...this.state.posts];
+    posts.push({
+      id: posts.length,
+      title: title + ' [Edited]',
+      score: score,
+      context: text,
+      groups: finalGroups,
+      created: created,
+      comments: comments
+    })
+    this.setState({posts});
+    alert("Post has been Edited! Returning to the Feed section to view");
+  }
+
+  deleteEditedPost = (id) => {
     const posts = this.state.posts.filter(post => post.id !== id);
     for (let i = id; i <= posts.length-1; i++) {
       posts[i].id = posts[i].id - 1;
     }
     this.setState({posts});
     console.log("Post Deleted")
+  }
+
+  editPost = (id) =>{
+    console.log("Editing post " + id)
+    const edit = this.state.posts[id];
+    console.log(edit)
+    this.setState({edit})
+  }
+
+  deletePost = (id) => {
+    if(window.confirm("Are you sure you want to delete post?")){
+      const posts = this.state.posts.filter(post => post.id !== id);
+      for (let i = id; i <= posts.length-1; i++) {
+        posts[i].id = posts[i].id - 1;
+      }
+      this.setState({posts});
+      console.log("Post Deleted")
+    }
   }
 
   addComment = (id) => {
@@ -139,14 +183,22 @@ class App extends Component {
                 searchResults={this.state.searchResults}
                 toSearch={this.toSearch}
                 deletePost={this.deletePost}
+                editPost={this.editPost}
                 addComment={this.addComment}
                 deleteComment={this.deleteComment}
                 addScore={this.addScore}
             />}/>
           <Route path='/createpost' exact render={(props) => 
             <CreatePost 
-                posts={this.state.posts}
                 addPost={this.addPost}
+                searchResults={this.state.searchResults}
+                toSearch={this.toSearch}
+            />}/>
+          <Route path='/editpost' exact render={(props) => 
+            <EditPost
+                edit={this.state.edit}
+                addEditedPost={this.addEditedPost}
+                deleteEditedPost={this.deleteEditedPost}
                 searchResults={this.state.searchResults}
                 toSearch={this.toSearch}
             />}/>

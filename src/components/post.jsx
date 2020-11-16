@@ -15,7 +15,8 @@ class Post extends Component {
                                 {
                                     this.props.created ==="1" ?
                                     <div className="float-right">
-                                        <button onClick={() => this.props.deletePost(this.props.id)} className="btn btn-sm btn-danger m-2">Delete Post</button>
+                                        <Link to="/editpost" onClick={() => this.props.editPost(this.props.id)} className="btn btn-sm btn-primary my-2 mx-5">Edit Post</Link>
+                                        <button onClick={() => this.props.deletePost(this.props.id)} className="btn btn-sm btn-danger my-2 mx-5">Delete Post</button>
                                     </div>
                                     :null
                                 } 
@@ -39,7 +40,7 @@ class Post extends Component {
                         <button onClick={() => window.confirm("Any available files should be downloading right now.")} className="btn btn-sm btn-primary mx-2 float-left">Click to view available attached files</button>
                         <div className="m-auto float-left">{this.props.groups}</div>
                         <button className="btn btn-sm btn-primary mx-2 float-right" onClick={() => this.props.addComment(this.props.id)}>Add Comment</button>
-                        <button onClick={() => window.confirm("Thank you for flagging! We will be reviewing the Post and Comment for any inappropriate behaviors.")} className="btn btn-sm btn-danger mx-2 float-right">Flag</button>
+                        <button onClick={() => prompt("Thank you for flagging! We will be reviewing the Post and Comments for any inappropriate behaviors. Please let us know what was disturbing about the post:")} className="btn btn-sm btn-danger mx-2 float-right">Flag</button>
                     </div>
                 </div>
                 { this.props.comments.map( comment =>
