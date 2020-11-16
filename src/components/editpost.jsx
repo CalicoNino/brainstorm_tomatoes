@@ -39,8 +39,7 @@ class EditPost extends Component {
                                 <Link to="/feed" className="btn btn-lg btn-warning float-right" 
                                     onClick={() => this.props.addEditedPost(this.state.title, this.state.text, this.state.groups,
                                                                             this.state.project, this.state.assignment, 
-                                                                            this.props.edit.score, this.props.edit.created, this.props.edit.comments, 
-                                                                            this.props.edit.id)}>
+                                                                            this.props.edit.score, this.props.edit.created, this.props.edit.comments)}>
                                     Post
                                 </Link>
                             </div>

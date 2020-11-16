@@ -66,8 +66,7 @@ class App extends Component {
     alert("Post has been created! Returning to the Feed section to view");
   }
 
-  addEditedPost = (title,text,groups,project,assignment,score,created,comments,oldid) => {
-    // this.deleteEditedPost(oldid)
+  addEditedPost = (title,text,groups,project,assignment,score,created,comments) => {
     var finalGroups = []
     if (project) {
       finalGroups.push("#Project ")
@@ -88,6 +87,7 @@ class App extends Component {
     })
     this.setState({posts});
     alert("Post has been Edited! Returning to the Feed section to view");
+    console.log(this.state.posts)
   }
 
   deleteEditedPost = (id) => {
@@ -97,6 +97,7 @@ class App extends Component {
     }
     this.setState({posts});
     console.log("Post Deleted")
+    console.log(this.state.posts)
   }
 
   editPost = (id) =>{
@@ -114,6 +115,7 @@ class App extends Component {
       }
       this.setState({posts});
       console.log("Post Deleted")
+      console.log(this.state.posts)
     }
   }
 

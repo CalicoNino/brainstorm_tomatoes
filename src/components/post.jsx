@@ -16,7 +16,7 @@ class Post extends Component {
                                     this.props.created ==="1" ?
                                     <div className="float-right">
                                         <Link to="/editpost" onClick={() => this.props.editPost(this.props.id)} className="btn btn-sm btn-primary my-2 mx-5">Edit Post</Link>
-                                        <button onClick={() => this.props.deletePost(this.props.id)} className="btn btn-sm btn-danger my-2 mx-5">Delete Post</button>
+                                        <button onClick={() => this.props.deletePost(this.props.id)} className="btn btn-sm btn-danger my-2">Delete Post</button>
                                     </div>
                                     :null
                                 } 
